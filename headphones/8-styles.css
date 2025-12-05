@@ -1,0 +1,382 @@
+/* --- Variables & Reset --- */
+:root {
+    --primary-color: #FF6565;
+    --text-color: #071629;
+    --bg-dark: #071629;
+    --font-main: 'Source Sans Pro', sans-serif;
+}
+
+/* FONT DECLARATION: This makes the icons work */
+@font-face {
+    font-family: 'Holberton';
+    src: url('fonts/holberton_school-icon.eot');
+    src: url('fonts/holberton_school-icon.eot?#iefix') format('embedded-opentype'),
+         url('fonts/holberton_school-icon.woff') format('woff'),
+         url('fonts/holberton_school-icon.ttf') format('truetype'),
+         url('fonts/holberton_school-icon.svg#holberton_school-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
+    font-family: 'Holberton' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: white; /* Default text color for dark backgrounds */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; color: white; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- Buttons --- */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* --- Header & Hero --- */
+.header {
+    /* IMAGE ADDED: Hero Background 1 */
+    background: url('images/headphones_hero_1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-menu a {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav-menu a:hover { color: var(--primary-color); }
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.hero-content .hero-desc {
+    font-weight: 400;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* --- What We Do Section --- */
+.section-what {
+    padding: 80px 0;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.section-header {
+    max-width: 650px;
+    margin: 0 auto 60px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex-basis: 22%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.icon-wrapper span {
+    font-size: 65px;
+    color: var(--primary-color);
+}
+
+.feature-item h3 {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.feature-item p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* --- Our Results Section --- */
+.section-results {
+    /* IMAGE ADDED: Hero Background 2 */
+    background: url('images/headphones_hero_2.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.results-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.pentagon-wrapper {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 30px;
+}
+
+.pentagon {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    /* Task 6: Draw Pentagon */
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+}
+
+.pentagon:hover {
+    transform: scale(1.1);
+}
+
+.pentagon-content h3 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.pentagon-content p {
+    font-size: 14px;
+}
+
+/* --- Contact Section --- */
+.section-contact {
+    padding: 80px 0;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.section-contact h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ccc; /* Design usually has distinct borders */
+    border-bottom: 1px solid #ccc; 
+    padding: 10px 0;
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+    background: transparent;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--text-color);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--bg-dark);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    font-size: 30px;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+}
+
+/* --- MOBILE RESPONSIVENESS (Task 8) --- */
+@media (max-width: 768px) {
+    .features-grid {
+        justify-content: center;
+    }
+    .feature-item {
+        flex-basis: 45%;
+        margin-bottom: 40px;
+    }
+    .results-grid {
+        justify-content: center;
+    }
+    .pentagon-wrapper {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Mobile Menu Logic */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        background-color: var(--bg-dark);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px 0;
+        z-index: 100;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-item {
+        flex-basis: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Hamburger Animation to X */
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
